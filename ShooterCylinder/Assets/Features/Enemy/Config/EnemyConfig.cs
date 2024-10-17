@@ -8,5 +8,6 @@ namespace Features.Enemy.Config
         [SerializeField] private float enemyMoveSpeed;
 
         public float EnemyMoveSpeed => enemyMoveSpeed;
+     
     }
 }
