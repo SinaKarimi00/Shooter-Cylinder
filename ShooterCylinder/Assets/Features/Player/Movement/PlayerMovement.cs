@@ -49,7 +49,7 @@ namespace Features.Player.Movement
         private void MovePlayer()
         {
             _moveDirection = Vector3.forward * _verticalInput + Vector3.right * _horizontalInput;
-            _rb.AddForce(_moveDirection.normalized * (_moveSpeed * 10f), ForceMode.Force);
+            _rb.AddForce(_moveDirection.normalized * _moveSpeed, ForceMode.Force);
         }
 
         private void RotatePlayer()
