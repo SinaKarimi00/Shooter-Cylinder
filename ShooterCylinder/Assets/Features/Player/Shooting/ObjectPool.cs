@@ -13,7 +13,7 @@ namespace Features.Player.Shooting
         {
             var configProviderService = DependencyInjector.Instance.GetDependency<IConfigProviderService>();
             var playerContainer = configProviderService.GetConfig<PlayerContainer>();
-            var bulletPrefab = Resources.Load<GameObject>("Player/Capsule");
+            var bulletPrefab = Resources.Load<GameObject>("Player/Bullet");
             _bulletPool = new List<GameObject>();
 
             for (var i = 0; i < playerContainer.PlayerConfig.PoolSize; i++)
