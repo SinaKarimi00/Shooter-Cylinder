@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Features.Enemy;
 using Features.Main.Application;
 using Features.Player.Movement;
 using Features.Player.Shooting;
@@ -9,11 +10,13 @@ namespace Features.Main.Main
     {
         private readonly PlayerMovement _playerMovement;
         private readonly Shoot _shoot;
+        private readonly EnemySpawner _enemySpawner;
 
         public Factory()
         {
             _playerMovement = new PlayerMovement();
             _shoot = new Shoot();
+            _enemySpawner = new EnemySpawner();
         }
 
         public List<IUpdater> CreateUpdaterClass()
@@ -21,7 +24,8 @@ namespace Features.Main.Main
             var updaterClass = new List<IUpdater>
             {
                 _playerMovement,
-                _shoot
+                _shoot,
+                _enemySpawner
             };
 
             return updaterClass;

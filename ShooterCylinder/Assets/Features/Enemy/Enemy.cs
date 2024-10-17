@@ -29,5 +29,13 @@ namespace Features.Enemy
             var enemyDirection = _playerContainer.PlayerTransform.position;
             transform.position = Vector3.MoveTowards(transform.position, enemyDirection, _moveSpeed * Time.deltaTime);
         }
+
+        private void OnCollisionEnter(Collision other)
+        {
+            if (other.transform.CompareTag($"Bullet"))
+            {
+                Destroy(gameObject, .1f);
+            }
+        }
     }
 }
