@@ -14,13 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnerHoles:
   - spawnRate: 5
-    position: {x: -2, y: 1.4, z: -3}
+    position: {x: 5, y: 1.4, z: -5}
   - spawnRate: 10
-    position: {x: 5, y: 1.4, z: 2}
+    position: {x: -5, y: 1.4, z: -5}
   - spawnRate: 8
-    position: {x: 0, y: 1.4, z: 2}
+    position: {x: 5, y: 1.4, z: 5}
   - spawnRate: 4
-    position: {x: 0, y: 1.4, z: -2}
+    position: {x: -5, y: 1.4, z: 5}
   initialSpawnInterval: 5
   difficultyRampTime: 60
   minimumSpawnInterval: 1
