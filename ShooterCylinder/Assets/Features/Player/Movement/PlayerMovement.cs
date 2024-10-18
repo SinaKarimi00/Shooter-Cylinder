@@ -1,6 +1,6 @@
 ﻿using Features.ConfigProvider;
 using Features.DependencyInjection.Main;
-using Features.Main.Application;
+using Features.MainScript.Application;
 using UnityEngine;
 
 namespace Features.Player.Movement
@@ -17,7 +17,6 @@ namespace Features.Player.Movement
 
         public PlayerMovement()
         {
-            Cursor.lockState = CursorLockMode.Locked;
             var configProviderService = DependencyInjector.Instance.GetDependency<IConfigProviderService>();
             var playerContainer = configProviderService.GetConfig<PlayerContainer>();
             _rb = playerContainer.PlayerRigidbody;
