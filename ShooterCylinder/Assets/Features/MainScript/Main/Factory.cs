@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Features.Enemy;
 using Features.Main.Application;
+using Features.Observer.Main.Listeners;
 using Features.Player.Movement;
 using Features.Player.Shooting;
 
@@ -17,6 +18,11 @@ namespace Features.Main.Main
             _playerMovement = new PlayerMovement();
             _shoot = new Shoot();
             _enemySpawner = new EnemySpawner();
+        }
+
+        public TimeCalculator CreateTimeCalculator()
+        {
+            return new TimeCalculator();
         }
 
         public List<IUpdater> CreateUpdaterClass()
