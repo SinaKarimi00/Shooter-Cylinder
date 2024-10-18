@@ -1,5 +1,6 @@
 ﻿using Features.ConfigProvider;
 using Features.DependencyInjection.Main;
+using Features.MainScript.Main;
 using Features.Player;
 using UnityEngine;
 
@@ -7,9 +8,9 @@ namespace Features.Enemy
 {
     public class Enemy : MonoBehaviour
     {
+        private float _moveSpeed;
         private PlayerContainer _playerContainer;
         private EnemyContainer _enemyContainer;
-        private float _moveSpeed;
 
         private void Start()
         {
@@ -34,6 +35,8 @@ namespace Features.Enemy
         {
             if (other.transform.CompareTag($"Bullet"))
             {
+                var currentKillCount = GameDataPref.KillCount;
+                GameDataPref.KillCount = currentKillCount + 1;
                 Destroy(gameObject, .1f);
             }
         }

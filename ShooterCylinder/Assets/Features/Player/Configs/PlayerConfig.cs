@@ -7,11 +7,9 @@ namespace Features.Player.Configs
     {
         [SerializeField] private float moveSpeed;
 
-        [SerializeField] private float mouseSensitivity;
         [SerializeField] private int poolSize;
 
         public float MoveSpeed => moveSpeed;
-        public float MouseSensitivity => mouseSensitivity;
         public int PoolSize => poolSize;
     }
 }
