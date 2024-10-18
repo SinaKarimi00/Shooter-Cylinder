@@ -7,11 +7,11 @@ namespace Features.Enemy.Config
     public class EnemySpawnerConfig : ScriptableObject
     {
         [SerializeField] private List<SpawnerHoleData> spawnerHoles;
-        [SerializeField] private float initialSpawnInterval = 5f;
-        [SerializeField] private float difficultyRampTime = 60f;
-        [SerializeField] private float minimumSpawnInterval = 1f;
-        [SerializeField] private int initialEnemiesPerSpawn = 1;
-        [SerializeField] private int maxEnemiesPerSpawn = 5;
+        [SerializeField] private float initialSpawnInterval;
+        [SerializeField] private float difficultyRampTime;
+        [SerializeField] private float minimumSpawnInterval;
+        [SerializeField] private int initialEnemiesPerSpawn;
+        [SerializeField] private int maxEnemiesPerSpawn;
 
 
         public float InitialSpawnInterval => initialSpawnInterval;

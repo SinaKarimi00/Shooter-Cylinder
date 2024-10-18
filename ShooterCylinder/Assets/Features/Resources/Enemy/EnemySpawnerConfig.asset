@@ -12,9 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 772128354f984f509435582b1047f1c7, type: 3}
   m_Name: EnemySpawnerConfig
   m_EditorClassIdentifier: 
-  spawnerHoles: []
+  spawnerHoles:
+  - spawnRate: 5
+    position: {x: -2, y: 1.4, z: -3}
+  - spawnRate: 10
+    position: {x: 5, y: 1.4, z: 2}
+  - spawnRate: 8
+    position: {x: 0, y: 1.4, z: 2}
+  - spawnRate: 4
+    position: {x: 0, y: 1.4, z: -2}
   initialSpawnInterval: 5
   difficultyRampTime: 60
   minimumSpawnInterval: 1
-  initialEnemiesPerSpawn: 1
-  maxEnemiesPerSpawn: 5
+  initialEnemiesPerSpawn: 2
+  maxEnemiesPerSpawn: 10
