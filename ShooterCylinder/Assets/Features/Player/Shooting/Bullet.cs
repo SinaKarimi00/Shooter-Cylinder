@@ -4,8 +4,8 @@ namespace Features.Player.Shooting
 {
     public class Bullet : MonoBehaviour
     {
-        public float speed = 200f;
-        public float maxLifetime = 5f;
+        public float speed;
+        public float maxLifetime;
         private float _lifetime;
         private Rigidbody _rb;
 
