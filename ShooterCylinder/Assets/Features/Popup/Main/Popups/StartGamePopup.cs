@@ -2,6 +2,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using Features.DependencyInjection.Main;
+using Features.MainScript.Main;
+using Features.Observer.Main;
+using Features.Observer.Main.Events;
+using Features.Observer.Main.Listeners;
 using Features.Popup.Application;
 using UnityEngine;
 using UnityEngine.UI;
@@ -11,6 +15,7 @@ namespace Features.Popup.Main.Popups
     public class StartGamePopup : MonoBehaviour, IPopup
     {
         [SerializeField] private Button startGameButton;
+        [SerializeField] private Button exitGameButton;
         [SerializeField] private GameObject playerContainer;
         [SerializeField] private GameObject enemyContainer;
         [SerializeField] private GameObject mainScript;
@@ -23,12 +28,14 @@ namespace Features.Popup.Main.Popups
         private void Awake()
         {
             startGameButton.onClick.AddListener(StartGame);
+            exitGameButton.onClick.AddListener(UnityEngine.Application.Quit);
             _gameStateActionPair.Add(GameState.TryToStartGame, CheckMonoDependencyInjector);
             _gameStateActionPair.Add(GameState.MonoDependencyInjectorIsActive, ActiveMainScript);
             _gameStateActionPair.Add(GameState.MainScriptIsActive, ActivePlayer);
             _gameStateActionPair.Add(GameState.GameStarted, Close);
             _currentState = GameState.None;
             _lastState = _currentState;
+            GameDataPref.ResetData();
         }
 
         private void Update()
@@ -45,6 +52,8 @@ namespace Features.Popup.Main.Popups
 
         public void Close()
         {
+            var eventService = DependencyInjector.Instance.GetDependency<EventService>();
+            eventService.SendNotification<TimeCalculator>(new StartTimeEvent());
             Destroy(gameObject);
         }
 
