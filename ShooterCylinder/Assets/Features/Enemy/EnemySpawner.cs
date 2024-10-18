@@ -1,7 +1,7 @@
 ﻿using Features.ConfigProvider;
 using Features.DependencyInjection.Main;
 using Features.Enemy.Config;
-using Features.Main.Application;
+using Features.MainScript.Application;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
