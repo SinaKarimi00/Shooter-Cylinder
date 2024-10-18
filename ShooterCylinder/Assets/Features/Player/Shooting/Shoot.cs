@@ -1,6 +1,6 @@
 ﻿using Features.ConfigProvider;
 using Features.DependencyInjection.Main;
-using Features.Main.Application;
+using Features.MainScript.Application;
 using UnityEngine;
 
 namespace Features.Player.Shooting
