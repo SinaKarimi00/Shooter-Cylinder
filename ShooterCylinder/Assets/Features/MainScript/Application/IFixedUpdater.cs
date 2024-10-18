@@ -1,4 +1,4 @@
-﻿namespace Features.Main.Application
+﻿namespace Features.MainScript.Application
 {
     public interface IFixedUpdater
     {
