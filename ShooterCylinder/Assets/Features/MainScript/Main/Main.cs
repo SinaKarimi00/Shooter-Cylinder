@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
 using Features.DependencyInjection.Main;
-using Features.Main.Application;
+using Features.MainScript.Application;
 using Features.Observer.Application;
 using Features.Observer.Main;
 using UnityEngine;
 
-namespace Features.Main.Main
+namespace Features.MainScript.Main
 {
     public class Main : MonoBehaviour, IListener
     {
@@ -23,6 +23,8 @@ namespace Features.Main.Main
             _updateNeededElements.AddRange(GetUpdateNeededElements());
             _fixedUpdateNeededElements.AddRange(GetFixedUpdateNeededElements());
             factory.CreateTimeCalculator();
+            Cursor.lockState = CursorLockMode.Locked;
+
 
             List<IUpdater> GetUpdateNeededElements() => factory.CreateUpdaterClass();
             List<IFixedUpdater> GetFixedUpdateNeededElements() => factory.CreateFixedUpdaterClass();
@@ -30,14 +32,14 @@ namespace Features.Main.Main
 
         private void Update()
         {
-            if (!_isGameFinish) return;
+            if (_isGameFinish) return;
             foreach (var updateNeededElement in _updateNeededElements)
                 updateNeededElement.Update();
         }
 
         private void FixedUpdate()
         {
-            if (!_isGameFinish) return;
+            if (_isGameFinish) return;
             foreach (var fixedUpdateNeededElement in _fixedUpdateNeededElements)
                 fixedUpdateNeededElement.FixedUpdate();
         }
@@ -45,6 +47,7 @@ namespace Features.Main.Main
         public void ReactionToEvent(IEvent generatedEvent)
         {
             _isGameFinish = true;
+            Cursor.lockState = CursorLockMode.None;
         }
     }
 }

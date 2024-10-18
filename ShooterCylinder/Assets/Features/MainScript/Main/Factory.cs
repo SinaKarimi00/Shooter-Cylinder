@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
 using Features.Enemy;
-using Features.Main.Application;
+using Features.MainScript.Application;
 using Features.Observer.Main.Listeners;
 using Features.Player.Movement;
 using Features.Player.Shooting;
 
-namespace Features.Main.Main
+namespace Features.MainScript.Main
 {
     public class Factory
     {
