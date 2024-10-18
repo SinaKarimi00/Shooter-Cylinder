@@ -11,6 +11,7 @@ namespace Features.Player
         [SerializeField] private Rigidbody playerRigidbody;
         [SerializeField] private Transform playerTransform;
         [SerializeField] private Transform firePoint;
+        [SerializeField] private Transform popupCanvas;
         private ObjectPool _bulletPool;
         private PlayerConfig _playerConfig;
 
@@ -28,5 +29,6 @@ namespace Features.Player
         public PlayerConfig PlayerConfig => _playerConfig;
         public ObjectPool ObjectPool => _bulletPool;
         public Transform FirePoint => firePoint;
+        public Transform PopupCanvas => popupCanvas;
     }
 }
