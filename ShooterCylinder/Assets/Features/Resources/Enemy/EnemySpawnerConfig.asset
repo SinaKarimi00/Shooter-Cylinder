@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 772128354f984f509435582b1047f1c7, type: 3}
+  m_Name: EnemySpawnerConfig
+  m_EditorClassIdentifier: 
+  spawnerHoles:
+  - spawnRate: 5
+    position: {x: 5, y: 1.4, z: -5}
+  - spawnRate: 10
+    position: {x: -5, y: 1.4, z: -5}
+  - spawnRate: 8
+    position: {x: 5, y: 1.4, z: 5}
+  - spawnRate: 4
+    position: {x: -5, y: 1.4, z: 5}
+  initialSpawnInterval: 5
+  difficultyRampTime: 60
+  minimumSpawnInterval: 1
+  initialEnemiesPerSpawn: 2
+  maxEnemiesPerSpawn: 10

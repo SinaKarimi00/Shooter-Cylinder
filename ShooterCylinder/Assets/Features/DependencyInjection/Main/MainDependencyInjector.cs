@@ -1,5 +1,8 @@
 ﻿using System.Collections.Generic;
+using Features.ConfigProvider;
+using Features.ConfigProvider.Main;
 using Features.DependencyInjection.Application;
+using Features.Observer.Main;
 using UnityEngine;
 
 namespace Features.DependencyInjection.Main
@@ -35,6 +38,8 @@ namespace Features.DependencyInjection.Main
 
         private void CreateDependencies()
         {
+            Bind<IConfigProviderService>(new ConfigProviderService());
+            Bind<IService>(new EventService());
         }
 
         private void Bind<TBind>(TBind instance) where TBind : IService
